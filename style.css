@@ -1,208 +1,839 @@
-*{
-    padding: 0;
+/* =========================================
+   RESET
+========================================= */
+
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-.navbar{
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   COLORS
+========================================= */
+
+:root {
+    --blue: #2A74E6;
+    --light-blue: #83aff0;
+    --light-border: #eeeeee;
+    --dark: #222;
+    --white: #fff;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 80px;
+    margin: 0 auto;
+
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-between;
+
     gap: 30px;
+}
+
+.logo img {
+    width: 85px;
+    height: auto;
+    display: block;
+}
+
+
+/* Navigation */
+
+.navlist ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.navlist a {
+    color: var(--dark);
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.navlist a:hover {
+    color: var(--blue);
+}
+
+
+/* Get hosting button */
+
+.navlist .button {
+    background-color: var(--blue);
+    color: var(--white);
+
+    padding: 10px 16px;
+
+    border-radius: 4px;
+}
+
+.navlist .button:hover {
+    color: white;
+    background-color: #155fc9;
+}
+
+
+/* Mobile menu */
+
+.menu-bar {
+    display: none;
+    font-size: 25px;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.box {
+    width: 100%;
+
+    background-color: var(--blue);
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.box h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.box p {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.hero-icon {
+    margin-top: 30px;
+}
+
+.hero-icon i {
+    font-size: 60px;
+}
+
+
+/* =========================================
+   BLOG DETAIL SECTION
+========================================= */
+
+.detail {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+
+/* =========================================
+   BLOG POSTS
+========================================= */
+
+.posts {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 25px;
+}
+
+.post {
+    width: 100%;
+}
+
+.post img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    border-radius: 3px;
+}
+
+
+/* Date */
+
+.first-desc {
+    display: inline-block;
+
+    background-color: var(--dark);
+
+    color: var(--white);
+
+    padding: 5px 8px;
+
+    border-radius: 3px;
+
+    font-size: 12px;
+}
+
+
+/* Post paragraph */
+
+.post p {
+    margin: 15px 0;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* Learn more */
+
+.learn-more {
+    color: var(--dark);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    color: var(--blue);
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.col-2 {
+    width: 280px;
+
+    flex-shrink: 0;
+}
+
+.sidebar-section {
+    margin-bottom: 35px;
+}
+
+.sidebar-section h2 {
+    color: var(--blue);
+
+    font-size: 21px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-form {
+    display: flex;
+
+    width: 100%;
+}
+
+.search-form input {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ddd;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.search-form input:focus {
+    border-color: var(--blue);
+}
+
+.search-form button {
+    width: 45px;
+
+    border: none;
+
+    background-color: var(--blue);
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   SIDEBAR POSTS
+========================================= */
+
+.white,
+.blue {
+    width: 100%;
+
+    min-height: 90px;
+
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+.white {
+    border: 1px solid var(--light-border);
+
+    background-color: white;
+}
+
+.blue {
+    background-color: var(--blue);
+
+    color: white;
+}
+
+.blue small {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   CATEGORIES
+========================================= */
+
+.categories {
+    list-style: none;
+}
+
+.categories li {
+    margin-bottom: 12px;
+}
+
+.categories a {
+    color: #333;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.categories a:hover {
+    color: var(--blue);
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.services {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.services span {
+    display: inline-block;
+
+    border: 1px solid var(--light-border);
+
+    border-radius: 3px;
+
+    padding: 6px 10px;
+
+    font-size: 13px;
+
+    color: #333;
+}
+
+.services .active {
+    background-color: var(--blue);
+
+    color: white;
+
+    border-color: var(--blue);
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.indicator {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 50px auto;
+}
+
+.page-arrow,
+.page-number {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 2px solid var(--light-blue);
+
+    border-radius: 50%;
+
+    color: var(--blue);
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.page-number.active {
+    background-color: var(--blue);
+
+    color: white;
+
+    border-color: var(--blue);
+}
+
+.page-arrow:hover,
+.page-number:hover {
+    background-color: var(--blue);
+
+    color: white;
+
+    border-color: var(--blue);
+}
+
+
+/* =========================================
+   CHAT SECTION
+========================================= */
+
+.boxpart2 {
+    width: 100%;
+
+    background-color: var(--blue);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.boxpart2 h2 {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.boxpart2 p {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+.chat-icon {
+    margin: 25px 0;
+}
+
+.chat-icon i {
+    font-size: 50px;
+}
+
+.chat-button {
+    display: inline-block;
+
+    background-color: white;
+
+    color: var(--blue);
+
+    padding: 12px 25px;
+
+    border-radius: 4px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.chat-button:hover {
+    background-color: #e9e9e9;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background-color: #f8f8f8;
+
+    padding: 50px 0;
+}
+
+.footer {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr) 1.5fr;
+
+    gap: 35px;
+}
+
+.foot-column h3 {
+    margin-bottom: 18px;
+
+    color: var(--dark);
+
+    font-size: 18px;
+}
+
+.foot-column ul {
+    list-style: none;
+}
+
+.foot-column li {
     margin-bottom: 10px;
 }
-.navbar .navlist a{
-    text-decoration: none;
-    color: black;
-}
-.navbar .navlist .button{
-    background-color: #2A74E6;
-    padding: 10px 13px;
-    border-radius: 3px;
-    color: white;
-}
-.box{
-    background-color:#2A74E6;
-    height: 300px;
-    font-size: 35px;
-}
-.box h2{
-    color: white;
-}
-.box p{
-    color: #fff;
-    justify-content: center;
-    display: flex;
-    font-size: 25px;
-}
-.box center i{
-    font-size: 80px;
-    color: #fff;
-    margin-top: 25px;
-}
-.detail{
-    display: flex;
-    gap: 22px;
-    width: 55%;
-    margin: 24px auto;
-}
-.col-1{
-    display: flex;
-}
-.detail > .col-1 > #col-content .first-desc{
-    background-color: black;
-    border-radius: 2px;
-    color: white;
-    padding: 5px;
-    font-size: 12px;
-    text-decoration: none;
-}
-.detail > .col-1 > #col-content .lear-more:link{
-    color: black;
-    text-decoration:none;
 
-}
-.detail aside form h2{
-    color: #2A74E6;
-}
- .detail .col-2  h2{
-    color: #2A74E6;
-}
-.detail .col-2  li{
-    font-size: 15px;
-    font-weight: 3px;
-    list-style-type: none;
-}
-.detail .col-2  .blue{
-    border: 0.5px solid black;
-    background-color:#2A74E6;
-    width: 100%;
-    padding: 5px;
-    width: 250px;
-    height: 100px;
-    box-shadow: 10px;
-    color: #fff;
-}
-.detail aside .white{
-    border: 2px solid rgb(247, 237, 237);
-    padding: 5px;
-    width: 100%;
-    padding: 5px;
-    width: 250px;
-    height: 90px;
-}
-.detail .col-2 ol a{
-    list-style: none;
-    color: #2A74E6;
-}
-.detail .col-2 .services span{
-    border:0.5px solid rgba(242, 234, 234, 0.816);
-    border-radius: 2px;
-    width: 35%;
-    gap: 3px;
-    padding: 5px;
-    margin-top: 300px;
-    margin-bottom: 300px;
-}
-.detail .col-2 h2{
-    margin-top:5px;
-    margin-bottom: 7px;
-}
-.detail .col-2 .services .span{
-    background-color: #2A74E6;
-    color: white;
-    padding: 2.5px;
-    margin-top: 300px;
-    margin-bottom: 300px;
-}
-.indicator{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-.indicator .left-arrow{
-    border: 2px solid #83aff0;
-    width: 45px;
-    height: px;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 3px;
-    margin-bottom: 15px;
-}
-.indicator div:nth-child(2) {
-    border: 2px solid #83aff0;
-    width: 45px;
-    height: px;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 3px;
-    margin-bottom: 15px;
-    color: #fff;
-    background-color: #2A74E6;
-}
-.indicator div:nth-child(3) {
-    border: 2px solid #83aff0;
-    width: 45px;
-    height: px;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 3px;
-    margin-bottom: 15px;
-}
-.indicator div:nth-child(4) {
-    border: 2px solid #83aff0;
-    width: 45px;
-    height: px;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 3px;
-    margin-bottom: 15px;
-}
-.indicator .right-arrow{
-    border: 2px solid #83aff0;
-    width: 45px;
-    height: px;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 3px;
-    margin-bottom: 15px;
-}
-.detail .indicator div:nth-child(odd){
-    width: 12px;
-    height: 12px;
-    border: 50%;
+.foot-column li a {
+    color: #555;
+
+    font-size: 14px;
+
+    transition: 0.3s;
 }
 
-.boxp2{
-    background-color: #2A74E6;
+.foot-column li a:hover {
+    color: var(--blue);
+}
+
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+.newsletter form {
+    display: flex;
+
+    margin-bottom: 30px;
+}
+
+.newsletter input {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ddd;
+
+    outline: none;
+}
+
+.newsletter input:focus {
+    border-color: var(--blue);
+}
+
+.newsletter button {
+    background-color: var(--blue);
+
+    color: white;
+
+    border: none;
+
+    padding: 0 15px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.socials {
+    display: flex;
+
     gap: 15px;
 }
-.boxp2 h2{
-    text-indent: 500px;
-    color: white;
-    font-size: 29px;
-}
-.boxp2 p{
-    text-indent: 350px;
-    color: #fff;
-}
-.boxp2  i{
-    font-size: 50px;
-    color: white;
-    margin-top: 15px;
-}
-.boxp2 h3{
-    color: #fff;
-    text-indent: 650px;
-    font-size: 40px;
+
+.socials a {
+    color: var(--blue);
+
+    font-size: 23px;
+
+    transition: 0.3s;
 }
 
-footer .footer{
-    display: flex;
-    align-items: center;
-    margin-left: 500px;
-    gap: 30px;
+.socials a:hover {
+    color: #155fc9;
 }
-footer .footer .high{
-    list-style-type: none;
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navlist ul {
+        gap: 15px;
+    }
+
+    .navlist a {
+        font-size: 13px;
+    }
+
+    .detail {
+        gap: 25px;
+    }
+
+    .col-2 {
+        width: 240px;
+    }
+
+    .posts {
+        gap: 30px 20px;
+    }
+
+    .footer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* -------------------------
+       NAVBAR
+    ------------------------- */
+
+    .navbar {
+        width: 90%;
+
+        min-height: 70px;
+    }
+
+    .navlist {
+        display: none;
+    }
+
+    .menu-bar {
+        display: block;
+    }
+
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .box {
+        padding: 45px 20px;
+    }
+
+    .box h1 {
+        font-size: 30px;
+    }
+
+    .box p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .hero-icon i {
+        font-size: 50px;
+    }
+
+
+    /* -------------------------
+       BLOG
+    ------------------------- */
+
+    .detail {
+        width: 90%;
+
+        flex-direction: column;
+
+        margin: 35px auto;
+    }
+
+    .posts {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .post img {
+        height: auto;
+    }
+
+
+    /* -------------------------
+       SIDEBAR
+    ------------------------- */
+
+    .col-2 {
+        width: 100%;
+    }
+
+
+    /* -------------------------
+       PAGINATION
+    ------------------------- */
+
+    .indicator {
+        margin: 40px auto;
+    }
+
+    .page-arrow,
+    .page-number {
+        width: 40px;
+
+        height: 40px;
+    }
+
+
+    /* -------------------------
+       CHAT
+    ------------------------- */
+
+    .boxpart2 {
+        padding: 45px 20px;
+    }
+
+    .boxpart2 h2 {
+        font-size: 25px;
+
+        line-height: 1.4;
+    }
+
+    .boxpart2 p {
+        font-size: 14px;
+    }
+
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    footer {
+        padding: 40px 0;
+    }
+
+    .footer {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .newsletter {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .box h1 {
+        font-size: 26px;
+    }
+
+    .indicator {
+        gap: 6px;
+    }
+
+    .page-arrow,
+    .page-number {
+        width: 36px;
+
+        height: 36px;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .newsletter button {
+        padding: 10px;
+    }
+
 }
